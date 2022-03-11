@@ -1,0 +1,194 @@
+/* SignIn and SignUp */
+.register {
+  /* background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
+  background: -webkit-linear-gradient(left, #fe7418, #feb27f);
+  padding: 5%;
+}
+.register-left {
+  text-align: center;
+  color: #fff;
+  margin-top: 6%;
+}
+.register-left input {
+  border: none;
+  border-radius: 1.5rem;
+  padding: 2%;
+  width: 60%;
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #383d41;
+  margin-top: 30%;
+  margin-bottom: 3%;
+  cursor: pointer;
+}
+.register-right {
+  background: #fff;
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+}
+.register-left img {
+  margin-top: 15%;
+  margin-bottom: 5%;
+  width: 25%;
+  -webkit-animation: mover 2s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
+.register-left h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+.register-left p {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1;
+}
+.register-left .copy-right {
+  margin-top: 40%;
+}
+.register-left .copy-right p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.register .register-form,
+.add-expense,
+.register-form {
+  padding: 10%;
+  width: 100%;
+  margin: 0;
+}
+.btnRegister {
+  border: 2px solid #fe7920;
+  border-radius: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  background: #fe7920;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s all ease-in;
+}
+.btnRegister:hover {
+  background: #fff;
+  color: #fe7920;
+  border: 2px solid #fe7920;
+}
+.register .nav-tabs,
+.add-expense .nav-tabs {
+  margin-top: 3%;
+  border: none;
+  background: #fe7920;
+  border-radius: 1.5rem;
+  float: right;
+}
+.register .nav-tabs .nav-link,
+.add-expense .nav-tabs .nav-link {
+  width: 100%;
+  font-weight: 600;
+  color: #fff;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover,
+.add-expense .nav-tabs .nav-link:hover {
+  border: none;
+}
+.register .nav-tabs .nav-link.active,
+.add-expense .nav-tabs .nav-link.active {
+  width: 100px;
+  color: #fe7920;
+  border: 2px solid #000;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+.register-heading {
+  text-align: center;
+  margin-top: 8%;
+  margin-bottom: -15%;
+  color: #000;
+}
+/* End SignIn and SignUp */
+
+/* Dashboard */
+.dashboard {
+  width: 100%;
+  background: -webkit-linear-gradient(left, #fe7418, #feb27f);
+}
+.add-expense {
+  padding: 2% 5%;
+  width: 100%;
+  margin: auto;
+}
+.dashboard .header {
+  text-align: end;
+  margin: 10px 0;
+}
+.dashboard .header a {
+  background: #fff;
+  color: #fe761a;
+  padding: 5px 15px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+.dashboard .title-part {
+  text-align: center;
+}
+.dashboard .title-part img {
+  width: 5%;
+  animation: mover 1s infinite alternate;
+}
+.dashboard .title-part p {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+.add-expense form label {
+  color: #fff;
+  font-weight: 500;
+}
+.add-expense .btnAddExpense {
+  width: 20%;
+  border: 2px solid #fe7920;
+  border-radius: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  background: #fff;
+  color: #fe7920;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s all ease-in;
+}
+.add-expense .btnAddExpense:hover {
+  background: #fff;
+  color: #fe7920;
+  border: 2px solid #fe7920;
+}
+.table-list th {
+  color: #fff;
+}
+.table-row {
+  color: #fff;
+}
+/* End Dashboard */
+.validation {
+  font-size: 14px;
+  color: #ef1010;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management System</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <div class="container-fluid register">
+        <div class="row">
+            <div class="col-md-3 register-left"> 
+                <img src="./assets/img/expense-report-icon.png" />
+                <h3>Welcome To</h3>
+                <p>Expense Management System</p>
+                <div class="copy-right">
+                    <p>Copyright © All rigth reserve | Deisgn and Developed By <strong>Wamiq Wasi</strong></p>
+                </div>
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signIn" type="button" role="tab" aria-controls="home" aria-selected="true">SignIn</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signUp" type="button" role="tab" aria-controls="profile" aria-selected="false">SignUp</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade show active" id="signIn" role="tabpanel" aria-labelledby="signin-tab">
+                      <h3 class="register-heading">SignIn</h3>
+                      <div class="row register-form">
+                          <div class="col-12">
+                              <form class="row g-3" onsubmit="signIn()">
+                                  <div class="col-md-12">
+                                    <div class="formControl">
+                                      <label for="signinInputEmail" class="form-label">Email</label>
+                                      <input type="email" class="form-control" id="signinInputEmail" required>
+                                    </div>
+                                    <div class="formControl mt-3">
+                                      <label for="signinInputPassword" class="form-label">Password</label>
+                                      <input type="password" class="form-control" id="signinInputPassword" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-12">
+                                    <button class="btnRegister" type="submit">Submit form</button>
+                                  </div>
+                                </form>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="tab-pane fade" id="signUp" role="tabpanel" aria-labelledby="signup-tab">
+                      <h3 class="register-heading">SignUp</h3>
+                      <div class="row register-form">
+                          <div class="col-12">
+                              <form class="row g-3" onsubmit="signup()">
+                                <div class="col-md-12">
+                                  <div class="formControl">
+                                    <label for="signupInputUsername" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="signupInputUsername" required>
+                                  </div>
+                                  <div class="formControl mt-3">
+                                    <label for="signupInputEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="signupInputEmail" required>
+                                  </div>
+                                  <div class="formControl mt-3">
+                                    <label for="signupInputPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="signupInputPassword">
+                                    <span class="validation" id="validationPassword"></span>
+                                  </div>
+                                  <div class="formControl mt-3">
+                                    <label for="signupInputConfirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="signupInputConfirmPassword">
+                                  </div>
+                                </div>
+                                  <div class="col-12">
+                                    <button class="btnRegister" type="submit">Submit form</button>
+                                  </div>
+                                </form>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="assets/auth.js"></script>
+    <script src="assets/validation.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</body>
+</html>
