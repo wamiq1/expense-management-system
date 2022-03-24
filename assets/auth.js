@@ -1,8 +1,6 @@
 let users = [];
-let getUserFromLocal = localStorage.getItem('users');
-if (getUserFromLocal) {
-    users = JSON.parse(getUserFromLocal)
-}
+let getUserFromLocal = JSON.parse(localStorage.getItem('users'));
+
 function showMessages(message) {
     document.getElementById("validationPassword").innerHTML = message
 }
@@ -68,14 +66,12 @@ function signIn() {
     let email = document.getElementById('signinInputEmail').value;
     let password = document.getElementById('signinInputPassword').value;
 
-    let loginUser = {
-        email,
-        password
-    }
+    let localUser = JSON.parse(localStorage.getItem('users'));
 
-    users.forEach(user => {
+    localUser.forEach(user => {
+        console.log('User',user)
         if (user.email === email && user.password === password) {
-            localStorage.setItem("authentication", JSON.stringify(loginUser));
+            localStorage.setItem("authentication", JSON.stringify(user));
             window.location.href = "/dashboard/dashboard.html";
         }
     }) 

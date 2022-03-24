@@ -1,8 +1,9 @@
 /* SignIn and SignUp */
 .register {
   /* background: -webkit-linear-gradient(left, #3931af, #00c6ff); */
-  background: -webkit-linear-gradient(left, #fe7418, #feb27f);
+  background: -webkit-linear-gradient(left, #e11717, #fe7920);
   padding: 5%;
+  height: 100vh;
 }
 .register-left {
   text-align: center;
@@ -68,7 +69,6 @@
   line-height: 1.2;
 }
 .register .register-form,
-.add-expense,
 .register-form {
   padding: 10%;
   width: 100%;
@@ -126,18 +126,25 @@
 /* End SignIn and SignUp */
 
 /* Dashboard */
-.dashboard {
-  width: 100%;
-  background: -webkit-linear-gradient(left, #fe7418, #feb27f);
+.bgHeader {
+  background: #e11717;
+  height: 200px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 .add-expense {
-  padding: 2% 5%;
+  height: 100vh;
   width: 100%;
   margin: auto;
+  background-color: #f2f2f2;
 }
 .dashboard .header {
   text-align: end;
   margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
 }
 .dashboard .header a {
   background: #fff;
@@ -147,6 +154,15 @@
   font-size: 14px;
   font-weight: 600;
   border-radius: 5px;
+  cursor: pointer;
+}
+.header p {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  margin-right: 10px;
+  text-decoration: underline;
 }
 .dashboard .title-part {
   text-align: center;
@@ -161,8 +177,11 @@
   margin: 0;
   color: #fff;
 }
+/* .dashboard .form-control {
+  border: 2px solid #fe7920;
+} */
 .add-expense form label {
-  color: #fff;
+  color: #fe7920;
   font-weight: 500;
 }
 .add-expense .btnAddExpense {
@@ -181,14 +200,21 @@
   color: #fe7920;
   border: 2px solid #fe7920;
 }
+.table {
+  border-color: #000;
+}
 .table-list th {
-  color: #fff;
+  color: #fe7920;
 }
 .table-row {
-  color: #fff;
+  color: #000;
 }
 /* End Dashboard */
 .validation {
   font-size: 14px;
   color: #ef1010;
+}
+i {
+  margin-right: 10px;
+  color: #fe7920;
 }

@@ -1,8 +1,14 @@
 let listItem = [];
-
+let totalIncome = 0;
 let tboday = document.getElementById("tableBody");
 
-let getAuthUser = localStorage.getItem("authentication");
+let getAuthUser = JSON.parse(localStorage.getItem("authentication"));
+console.log(getAuthUser);
+
+if (getAuthUser) {
+    let loginUser = document.getElementById("userData");
+    loginUser.innerText = "Hello! " + getAuthUser.username;
+}
 
 function addExpense() {
     event.preventDefault();
@@ -22,7 +28,8 @@ function addExpense() {
         income: income.value,
         expense: expense.value,
         created_at: getDate,
-        status: false
+        status: false,
+        authenticated_email: getAuthUser.email
     }
 
     listItem.push(data);
@@ -37,7 +44,11 @@ function addExpense() {
 
 function showExpenseList() {
     tboday.innerHTML = ''
-    listItem.forEach(function({id, title, income, expense, created_at, status}, index) {
+
+    let filteredData = listItem.filter(res => {
+        return res.authenticated_email === getAuthUser.email
+    })
+    filteredData.forEach(function({id, title, income, expense, created_at, status}, index) {
 
         let tableRow = document.createElement("tr");
         tableRow.classList.add("table-row");
@@ -66,15 +77,15 @@ function showExpenseList() {
         tableData6.innerHTML = status;
         tableRow.appendChild(tableData6);
 
-        let tableData7 = document.createElement("td");
-        let iconEdit = document.createElement("i");
-        let iconDelete = document.createElement("i");
-        iconEdit.classList.add("fa-solid",  "fa-pen-to-square");
-        tableData7.appendChild(iconEdit);
-        tableRow.appendChild(tableData7);
-        iconDelete.classList.add("fa-solid", "fa-trash");
-        tableData7.appendChild(iconDelete);
-        tableRow.appendChild(tableData7);
+        // let tableData7 = document.createElement("td");
+        // let iconEdit = document.createElement("i");
+        // let iconDelete = document.createElement("i");
+        // iconEdit.classList.add("fa-solid",  "fa-pen-to-square");
+        // tableData7.appendChild(iconEdit);
+        // tableRow.appendChild(tableData7);
+        // iconDelete.classList.add("fa-solid", "fa-trash");
+        // tableData7.appendChild(iconDelete);
+        // tableRow.appendChild(tableData7);
 
         tboday.appendChild(tableRow);
     });
@@ -82,7 +93,11 @@ function showExpenseList() {
 
 let getList = localStorage.getItem('data');
 if (getList) {
-    listItem = JSON.parse(getList);
+    listItem = JSON.parse(getList); 
+    
+    const sumall = listItem.map(item => item.income).reduce((prev, curr) => 
+    {parseInt(prev) + parseInt(curr), 0});
+    console.log(sumall);
 }
 showExpenseList();
 

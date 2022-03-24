@@ -16,21 +16,23 @@
 <body>
   
   <section class="dashboard add-expense">
-    <div class="container">
+    <div class="container-fluid bgHeader">
       <div class="row">
         <div class="col-lg-12">
           <div class="header">
+            <p id="userData"></p>
             <a onclick="signout()">logout</a>
           </div>
           <div class="title-part"> 
             <img src="../assets/img/expense-report-icon.png" />
+            <p>Welcome To</p>
             <p>Expense Management System</p>
           </div>
         </div>
       </div>
     </div>
     <div class="container mt-3 mb-5">
-      <div class="row justify-content-center">
+      <div class="row">
         <div class="col-lg-8">
           <form class="row g-3" onsubmit="addExpense()">
             <div class="col-md-12">
@@ -57,12 +59,15 @@
             </div>
           </form>
         </div>
+        <div class="col-lg-4">
+          <p id="totalIncome"></p>
+        </div>
       </div>
     </div>
     <div class="container table-list">
       <div class="row">
         <div class="col-12">
-          <table class="table table-bordered">
+          <table class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -72,7 +77,6 @@
                 <!-- <th scope="col">Category</th> -->
                 <th scope="col">Date</th>
                 <th scope="col">Status</th>
-                <th scope="col">Actions</th>
               </tr>
             </thead>
             <tbody id="tableBody"></tbody>
