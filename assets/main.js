@@ -10,6 +10,11 @@ if (getAuthUser) {
     loginUser.innerText = "Hello! " + getAuthUser.username;
 }
 
+let getList = localStorage.getItem('data');
+if (getList) {
+    listItem = JSON.parse(getList);
+}
+
 function addExpense() {
     event.preventDefault();
 
@@ -89,15 +94,28 @@ function showExpenseList() {
 
         tboday.appendChild(tableRow);
     });
+
+    let filterList = listItem.filter(res => {
+        return res.authenticated_email === getAuthUser.email
+    })
+
+    let diplayIncome = document.getElementById("totalIncome");
+    diplayIncome.innerHTML = filterList.map(item => item.income).reduce(getSum, 0);
+    diplayIncome.classList.add("totals");
+
+    let diplayExpense = document.getElementById("totalExpense");
+    diplayExpense.innerHTML = filterList.map(item => item.expense).reduce(getSum, 0);
+    diplayExpense.classList.add("totals");
+
+    let remaining = document.getElementById("remaining")
+    remaining.innerHTML =  diplayIncome.innerHTML - diplayExpense.innerHTML;
+    remaining.classList.add("totals");
+
+    getSum(total, num);
 }
 
-let getList = localStorage.getItem('data');
-if (getList) {
-    listItem = JSON.parse(getList); 
-    
-    const sumall = listItem.map(item => item.income).reduce((prev, curr) => 
-    {parseInt(prev) + parseInt(curr), 0});
-    console.log(sumall);
+function getSum(total, num) {
+    return total + Math.round(num);
 }
 showExpenseList();
 

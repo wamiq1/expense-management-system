@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="container mt-3 mb-5">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-lg-8">
           <form class="row g-3" onsubmit="addExpense()">
             <div class="col-md-12">
@@ -59,14 +59,11 @@
             </div>
           </form>
         </div>
-        <div class="col-lg-4">
-          <p id="totalIncome"></p>
-        </div>
       </div>
     </div>
     <div class="container table-list">
       <div class="row">
-        <div class="col-12">
+        <div class="col-6">
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -84,6 +81,13 @@
 
           <div class="calculation-part">
 
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="calculation-sec">
+            <p>Total Income: <span id="totalIncome"></span></p>
+            <p>Total Expense: <span id="totalExpense"></span></p>
+            <p>Remaining: <span id="remaining"></span></p>
           </div>
         </div>
       </div>

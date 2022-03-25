@@ -128,12 +128,12 @@
 /* Dashboard */
 .bgHeader {
   background: #e11717;
-  height: 200px;
+  height: 250px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
 .add-expense {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   margin: auto;
   background-color: #f2f2f2;
@@ -216,5 +216,15 @@
 }
 i {
   margin-right: 10px;
+  color: #fe7920;
+}
+.calculation-sec p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+.calculation-sec .totals {
+  font-size: 22px;
+  font-weight: 700;
   color: #fe7920;
 }
